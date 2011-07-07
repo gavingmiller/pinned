@@ -48,7 +48,7 @@ class Pinboard
   end
     
   def getHashes
-    apiData = { :basic_auth=>@auth, :query=>{:hashes} }
+    apiData = { :basic_auth=>@auth, :query=>:hashes }
     self.class.get("/posts/all?hashes", apiData)
   end
   
