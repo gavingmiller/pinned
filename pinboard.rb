@@ -47,9 +47,9 @@ class Pinboard
     #TODO
   end
     
-  def getHashes
-    apiData = { :basic_auth=>@auth, :query=>:hashes }
-    self.class.get("/posts/all?hashes", apiData)
+  def getHashes(options={})
+    apiData = { :basic_auth=>@auth, :query=>options }
+    self.class.get("/posts/all", apiData)
   end
   
   def suggestPosts(url='')
@@ -97,4 +97,4 @@ pb = Pinboard.new(:username=>u, :password=>p)
 puts "******************"
 puts "**** NEW POSTS ****"
 puts "******************"
-puts pb.getHashes
+puts pb.getHashes(:format => 'json', :results => 5)
