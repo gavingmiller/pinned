@@ -1,4 +1,4 @@
-[Pinboard](http://pinboard.in) API wrapper by SingAlong, enhanced by [adr-enal](https://github.com/adr-enal-in/pinboard-ruby).
+Notice is a [Pinboard API (v1.0)](http://pinboard.in/api/) wrapper. 
 
 ## Get all posts
 <pre>u=gets.chomp
@@ -10,3 +10,10 @@ pb.getHashes()</pre>
 <pre>getHashes(:results => 5) # only five posts
 getHashes(:format => 'json') # JSON
 getHashes(:format => 'json', :results => 5)</pre>
+
+
+## Thanks
+A big thanks to the originators of the script:
+
+ - SingAlong
+ - [adr-enal](https://github.com/adr-enal-in/pinboard-ruby)
