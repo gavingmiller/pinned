@@ -1,5 +1,4 @@
-# pinboard.rb
-Pinboard ( http://pinboard.in ) API wrapper by SingAlong ( https://github.com/SingAlong ), enhanced by me.
+[Pinboard](http://pinboard.in) API wrapper by SingAlong, enhanced by [adr-enal](https://github.com/adr-enal-in/pinboard-ruby).
 
 ## Get all posts
 <pre>u=gets.chomp
