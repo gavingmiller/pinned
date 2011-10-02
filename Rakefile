@@ -8,3 +8,10 @@ Rake::TestTask.new(:test) do |t|
   t.ruby_opts << '-I.'
 end
 
+task :build do 
+  sh 'gem build notice.gemspec'
+end
+
+task :install do
+  sh 'gem install notice --local'
+end
