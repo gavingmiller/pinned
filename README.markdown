@@ -1,16 +1,17 @@
 Notice is a [Pinboard API (v1.0)](http://pinboard.in/api/) wrapper. 
 
-## Get all posts
-<pre>u=gets.chomp
-p=gets.chomp
-pb=Pinboard.new(:username=>u, :password=>p)
-pb.getHashes()</pre>
+## Installation
 
-### All Posts Example
-<pre>getHashes(:results => 5) # only five posts
-getHashes(:format => 'json') # JSON
-getHashes(:format => 'json', :results => 5)</pre>
+    gem install notice
 
+## Usage
+
+### Get all posts
+
+    require 'notice'
+
+    notice = Notice.create(username, password)
+    notice.all
 
 ## Thanks
 A big thanks to the originators of the script:

@@ -1,19 +1,34 @@
 require 'rubygems'
 require 'httparty'
 
-class Pinboard
+class Notice
   include HTTParty
+
   base_uri 'https://api.pinboard.in/v1'
+
+  class << self
+    def create(u, p)
+      Notice.new(:username => u, :password => p)
+    end
+  end
 
   def initialize(auth)
     @auth = auth
   end
 
-  def getPosts(options={})
-    apiData = { :basic_auth=>@auth }
-    apiData.merge!(options)
-    self.class.get('/posts/get', apiData)
+  def all(options={})
+    options.merge!({ :basic_auth => @auth })
+    self.class.get('/posts/all', options)
   end
+
+  def posts(options={})
+    options.merge!({ :basic_auth => @auth })
+    self.class.get('/posts/get', options)
+  end
+
+  #####
+  # To look at 
+  #####
 
   def recentPosts(options={})
     apiData = { :basic_auth=>@auth }
@@ -43,15 +58,11 @@ class Pinboard
     self.class.get('/posts/delete', apiData)
   end
 
-  def allPosts()
-    #TODO
-  end
-    
   def getHashes(options={})
     apiData = { :basic_auth=>@auth, :query=>options }
     self.class.get("/posts/all", apiData)
   end
-  
+
   def suggestPosts(url='')
     if(url.strip.empty?)
       apiData = { :basic_auth=>@auth, :query=>{:url=>url} }
@@ -61,40 +72,4 @@ class Pinboard
 
     self.class.get('/posts/suggest', apiData)
   end
-
-  def getTags()
-    #TODO
-  end
-
-  def renameTag()
-    #TODO
-  end
-
-  def deleteTag()
-    #TODO
-  end
-
-  def getTagBundles()
-    #TODO
-  end
-
-  def assignTagsToBundle()
-    #TODO
-  end
-
-  def deleteBundle()
-    #TODO
-  end
-    
 end
-
-puts "Enter Pinboard.in username: "
-u = gets.chomp
-puts "and the password: "
-p = gets.chomp
-puts "Let me process"
-pb = Pinboard.new(:username=>u, :password=>p)
-puts "******************"
-puts "**** NEW POSTS ****"
-puts "******************"
-puts pb.getHashes(:format => 'json', :results => 5)
