@@ -1,17 +1,17 @@
-Notice is a [Pinboard API (v1.0)](http://pinboard.in/api/) wrapper. 
+Pinned is a [Pinboard API (v1.0)](http://pinboard.in/api/) wrapper. 
 
 ## Installation
 
-    gem install notice
+    gem install pinned
 
 ## Usage
 
 ### Get all posts
 
-    require 'notice'
+    require 'pinned'
 
-    notice = Notice.create(username, password)
-    notice.all
+    pinned = Pinned.create(username, password)
+    pinned.all
 
 ## Thanks
 A big thanks to the originators of the script:

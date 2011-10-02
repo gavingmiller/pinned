@@ -3,7 +3,7 @@ require File.expand_path('../helper', __FILE__)
 class BaseTest < Test::Unit::TestCase
   def setup
     config = YAML::load(File.read(File.join(ENV['HOME'], '.pinboard')))
-    @notice = Notice.create(config['username'], config['password'])
+    @pinned = Pinned.create(config['username'], config['password'])
   end
 
   def test_default
@@ -11,10 +11,10 @@ class BaseTest < Test::Unit::TestCase
   end
 
   def test_posts
-    # p @notice.posts
+    # p @pinned.posts
   end
 
   def test_all
-    p @notice.all
+    p @pinned.all
   end
 end

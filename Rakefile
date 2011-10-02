@@ -9,9 +9,9 @@ Rake::TestTask.new(:test) do |t|
 end
 
 task :build do 
-  sh 'gem build notice.gemspec'
+  sh 'gem build pinned.gemspec'
 end
 
 task :install do
-  sh 'gem install notice --local'
+  sh 'gem install pinned --local'
 end

@@ -1,14 +1,14 @@
 require 'rubygems'
 require 'httparty'
 
-class Notice
+class Pinned
   include HTTParty
 
   base_uri 'https://api.pinboard.in/v1'
 
   class << self
     def create(u, p)
-      Notice.new(:username => u, :password => p)
+      Pinned.new(:username => u, :password => p)
     end
   end
 
