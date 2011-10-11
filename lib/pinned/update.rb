@@ -1,8 +1,7 @@
 class Pinned
   module Update
-
-    def update
-      puts "update"
+    def posts_update
+      #TODO
     end
   end
 end

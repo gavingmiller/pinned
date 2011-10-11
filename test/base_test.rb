@@ -11,8 +11,10 @@ class BaseTest < Test::Unit::TestCase
   end
 
   def test_posts
+    # p @pinned.posts
   end
 
   def test_all
+    p @pinned.posts_all
   end
 end

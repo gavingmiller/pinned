@@ -1,8 +1,7 @@
 class Pinned
   module User
-
-    def user
-      puts "user"
+    def user_secret
+      #TODO
     end
   end
 end
