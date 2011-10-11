@@ -1,3 +1,2 @@
+require 'pinned'
 require 'test/unit'
-
-require 'pinned/base'
