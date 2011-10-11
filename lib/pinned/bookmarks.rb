@@ -1,4 +1,4 @@
-module Pinned
+class Pinned
   module Bookmarks
 
     def bookmarks
